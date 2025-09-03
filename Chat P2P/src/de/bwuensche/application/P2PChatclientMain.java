@@ -24,7 +24,6 @@ public class P2PChatclientMain {
         // Eingabe und Auslesung der ports und co.
         Pattern equalsPattern = Pattern.compile("=");
         Pattern colonPattern = Pattern.compile(":");
-        
         String[] userTypeParamterArray = equalsPattern.split(args[0]);
         String[] nicknameParameterArray = equalsPattern.split(args[1]);
         
@@ -41,22 +40,20 @@ public class P2PChatclientMain {
         // Evaluierung des Typens des Users
         if (userTypeParamterArray[0].equals("-connect")) {
             // Client
-            // Herausziehen der Parameter
             String[] parameterArray = colonPattern.split(userTypeParamterArray[1]);
             String host = parameterArray[0];
             int port = Integer.parseInt(parameterArray[1]);
             
-            // erstellung des Benutzers mit den übergebenen Parametern
+            // Erstellung des Benutzers mit den übergebenen Parametern
             user = new User(host, port, nickname);
             Chatlogic logic = new Chatlogic(user);
             logic.startChatRoom();
             
         } else if (userTypeParamterArray[0].equals("-listen")) {
             // Server
-            // Herausziehen der Parameter
             int port = Integer.parseInt(userTypeParamterArray[1]);
             
-            // erstellung des Benutzers mit den übergebenen Parametern
+            // Erstellung des Benutzers mit den übergebenen Parametern
             user = new User(null, port, nickname);
             Chatlogic logic = new Chatlogic(user);
             logic.startChatRoom();
@@ -69,3 +66,4 @@ public class P2PChatclientMain {
     }
     
 }
+
