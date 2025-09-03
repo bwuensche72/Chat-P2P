@@ -15,7 +15,6 @@ public class P2PChatclientMain {
         if (args == null) {
             throw new IllegalArgumentException("Es wurden keine Startparameter übergeben");
         }
-        
         // Prüfung der Paramteranzahl
         if (args.length != 2) {
             throw new IllegalArgumentException("Falsche Anzahl an übergebenen Startparametern");
@@ -63,7 +62,5 @@ public class P2PChatclientMain {
                 "Es wurden entweder invalide Startparameter übergeben oder "
                     + "diese wurden in der falschen Reihenfolge übergeben");
         }
-    }
-    
+    }   
 }
-
